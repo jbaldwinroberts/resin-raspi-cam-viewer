@@ -2,13 +2,15 @@
   "name": "resin-raspi-cam-viewer",
   "version": "0.0.0",
   "description": "Allows the viewing of all raspi cam streams from your application",
-  "main": "server.js",
+  "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Joe Roberts",
   "license": "BSD-2-Clause",
   "dependencies": {
-  	"resin-sdk": "5.3.1"
+    "resin-sdk": "5.3.1",
+    "express": "4.13.4",
+    "express-handlebars": "3.0.0"
   }
 }
