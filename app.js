@@ -21,8 +21,9 @@ function getDevices(res) {
 	    //enableDevices();
 	    console.log("2");
 	    resin.models.device.getAllByApplication(process.env.APP_NAME, function(error, devices) {
-		    if (error) throw error;
 		    console.log("3");
+		    if (error) throw error;
+		    console.log("4");
 		    res.render('home', { 'devices': devices });
 		});
 	});
