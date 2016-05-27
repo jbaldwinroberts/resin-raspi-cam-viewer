@@ -15,15 +15,11 @@ app.listen(process.env.PORT);
 console.log(process.env.PORT);
 
 function getDevices(res) {
-  console.log("1");
   resin.auth.authenticate({email: process.env.EMAIL, password: process.env.PASSWORD}, function(error, token) {
 	    if (error) throw error;
 	    //enableDevices();
-	    console.log("2");
 	    resin.models.device.getAllByApplication(process.env.APP_NAME, function(error, devices) {
-		    console.log("3");
 		    if (error) throw error;
-		    console.log("4");
 		    res.render('home', { 'devices': devices });
 		});
 	});
