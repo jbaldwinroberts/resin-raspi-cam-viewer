@@ -11,7 +11,7 @@ app.set('view engine', 'handlebars');
 app.get('/', function (req, res, next) {
 	getDevices(res)
 });
-app.listen(3000);
+app.listen(process.env.PORT || 3000);
 
 function getDevices(res) {
   resin.auth.authenticate({email: process.env.EMAIL, password: process.env.PASSWORD}, function(error, token) {
