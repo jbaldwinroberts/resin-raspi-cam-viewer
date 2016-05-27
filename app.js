@@ -16,7 +16,7 @@ app.listen(process.env.PORT || 3000);
 function getDevices(res) {
   resin.auth.authenticate({email: process.env.EMAIL, password: process.env.PASSWORD}, function(error, token) {
 	    if (error) throw error;
-	    enableDevices();
+	    //enableDevices();
 	    resin.models.device.getAllByApplication(process.env.APP_NAME, function(error, devices) {
 		    if (error) throw error;
 		    res.render('home', { 'devices': devices });
